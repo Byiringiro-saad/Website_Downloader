@@ -49,12 +49,15 @@ public class Main {
                 BufferedReader newWebsiteReader = new BufferedReader(new InputStreamReader(newUrl.openStream()));
                 BufferedWriter newWebsiteWriter = new BufferedWriter(new FileWriter(name+ "/" + "index" + iterator + ".html"));
                 String newWebsiteLine;
+                System.out.println("Downloading: " + newUrl);
 
                 while((newWebsiteLine = newWebsiteReader.readLine()) != null){
                     newWebsiteWriter.write(newWebsiteLine);
                 }
                 iterator += 1;
             }
+
+            System.out.println(iterator + " links downloaded");
 
 
         } catch (FileAlreadyExistsException e){
